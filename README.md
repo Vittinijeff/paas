@@ -29,7 +29,7 @@ Requires Go and Docker Desktop running.
 - Redeploy: old container stopped + removed, replaced atomically
 - App metadata CRUD: create, get
 - Reverse proxy: `<app>.localhost:8080` routes to the app's container
-- CLI: platform deploy `<dir>` - tars the directory, deploys it, prints the URL
+- CLI: `platform deploy <dir>` tars the directory, deploys it, prints the URL
 
 ## Roadmap
 - Deployment to a real server (DigitalOcean)

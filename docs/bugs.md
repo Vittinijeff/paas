@@ -5,11 +5,6 @@ Log an entry only if it clears the bar:
 - BUG: it taught me something or cost real time to find.
 
 ---
-## Template
-### <short title of the bug>
-- **Symptom:** <what you saw / what broke>
-- **Cause:** <what it actually was>
-- **Fix / lesson:** <what you did + the transferable takeaway>
 
 ### Package name
 - **Symptom:** code wouldn't run

@@ -2,14 +2,9 @@
 
 ## How to use this file
 Log an entry only if it clears the bar:
-- DECISION: a engineer could have reasonably chosen otherwise.
+- DECISION: an engineer could have reasonably chosen otherwise.
 
 ---
-## Template
-### <short title of the decision>
-- **Fork:** <the choice you faced, one line>
-- **Chose:** <what you picked / what you rejected>
-- **Why:** <the reasoning — the defensible part>
 
 ### Driver Choice
 - **Fork:** Had to decide between modernc vs mattn for my SQLite drivers for Go
@@ -49,7 +44,7 @@ Log an entry only if it clears the bar:
            current state of docker which is the path docker supports moving forward
            and since it's early on I won't need to make deep changes and can avoid 
            potential bugs that the old version had that were fixed in the newer 
-           version before i ever run into them. The trade off is mostly
+           version before I ever run into them. The trade-off is mostly
            coverage since most tutorials/articles will be based off of the older
            version
 - **Note:** the coverage cost turned out real and measurable — v28 tutorials 
