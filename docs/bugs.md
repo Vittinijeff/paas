@@ -3,8 +3,6 @@
 ## How to use this file
 Log an entry only if it clears the bar:
 - BUG: it taught me something or cost real time to find.
-Keep entries 2–4 lines. Capture the WHY / the lesson, not the code.
-When unsure, log it — under-logging (forgetting a good story) is the bigger risk.
 
 ---
 ## Template
@@ -32,8 +30,8 @@ When unsure, log it — under-logging (forgetting a good story) is the bigger ri
                github.com/docker/docker/client.
 - **Cause:** docker/docker/client used to just be a package in docker/docker but
              when they migrated it split the client into moby/moby/client
-- **Fix / lesson:** pinned the parent docker/docker@v28.5.2+incompatible which is
-                    old and unused will definitely modernize soon and also ran
+- **Fix / lesson:** pinned the parent docker/docker@v28.5.2+incompatible (old and
+                    unmaintained, later migrated) soon and also ran
                     go mod tidy. Learned a bug like declares its path as X but 
                     required as Y usually means a package got renamed/moved and to
                     fix it use the new path or pin a parent version that still
@@ -43,8 +41,8 @@ When unsure, log it — under-logging (forgetting a good story) is the bigger ri
 - **Symptom:** POST /apps/blog/deploy build failed with 500 / build failed. Server 
                log showed the real error: Error response from daemon: lsetxattr 
                /Dockerfile: xattr "com.apple.provenance": operation not supported
-- **Cause:** The daemon failed to unpack apple specific attributes since they aren't
-             recognized on linux systems
+- **Cause:** The daemon failed to unpack Apple-specific attributes since they aren't
+             recognized on Linux
 - **Fix / lesson:** rebuilt the tar without the attributes. Lesson learned was 
                     different tarring tools create different tars when given the
                     same content

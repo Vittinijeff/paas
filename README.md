@@ -2,6 +2,8 @@
 A mini Platform-as-a-Service in Go. Deploy an app from a directory to a running 
 container with one HTTP call.
 
+**Status:** MVP complete (Jul 2026)
+
 ## Quick start
 
 Requires Go and Docker Desktop running.
@@ -10,11 +12,14 @@ Requires Go and Docker Desktop running.
     go run ./cmd/server
 
     # terminal 2 — create the app, deploy a directory (must contain a Dockerfile)
-    curl -X POST -d '{"name":"myapp"}' localhost:8080/apps
-    go run ./cmd/platform deploy ./myapp
+    curl -X POST -d '{"name":"testapp"}' localhost:8080/apps
+    go run ./cmd/platform deploy ./testapp
 
     # your app is live
-    curl myapp.localhost:8080
+    curl testapp.localhost:8080
+
+> **Note:** the app name must match the directory name. `deploy ./testapp`
+> deploys to the app named `testapp`.
 
 ## What works today
 - Image building: tar over HTTP → POST /apps/{name}/deploy → tagged image
@@ -23,10 +28,10 @@ Requires Go and Docker Desktop running.
 - State tracking: container ID, port, status in SQLite
 - Redeploy: old container stopped + removed, replaced atomically
 - App metadata CRUD: create, get
-- Reverse proxy: <app>.localhost:8080 routes to the app's container — nobody types a port
-- CLI: platform deploy <dir> — tars the directory, deploys it, prints the URL
+- Reverse proxy: `<app>.localhost:8080` routes to the app's container
+- CLI: platform deploy `<dir>` - tars the directory, deploys it, prints the URL
 
-## In progress
+## Roadmap
 - Deployment to a real server (DigitalOcean)
 - Zero-downtime deploys: new container up and healthy before the old one dies — redeploys with no dropped requests
 

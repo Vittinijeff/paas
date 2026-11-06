@@ -1,6 +1,3 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -8,7 +5,7 @@
 *.so
 *.dylib
 
-# Test binary, built with `go test -c`
+# Test binary
 *.test
 
 # Code coverage profiles and other test artifacts
@@ -17,9 +14,6 @@ coverage.*
 *.coverprofile
 profile.cov
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
 # Go workspace file
 go.work
 go.work.sum
@@ -27,14 +21,14 @@ go.work.sum
 # env file
 .env
 
-# macOS — Finder metadata files, will appear everywhere if you don't ignore them
+# macOS
 .DS_Store
 
 # IDE / editor folders
 .vscode/
 .idea/
 
-# Local SQLite databases (you'll use SQLite for app metadata starting Week 2)
+# Local SQLite databases
 *.db
 *.sqlite
 *.sqlite-journal
@@ -45,4 +39,5 @@ go.work.sum
 
 paas
 paas.db
-testdata/
+platform-server
+*.tar
